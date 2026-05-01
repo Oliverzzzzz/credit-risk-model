@@ -8,3 +8,5 @@ __pycache__/
 *.egg-info/
 dist/
 .ipynb_checkpoints/
+mlflow.db
+notebooks/mlflow.db
