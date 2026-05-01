@@ -6,13 +6,13 @@ TARGET = "serious_dlqin2yrs"
 FEATURES = [
     "revolving_utilization_of_unsecured_lines",
     "age",
-    "number_of_time30_59_day_past_due_not_worse",
+    "number_of_time30_59_days_past_due_not_worse",
     "debt_ratio",
     "monthly_income",
     "number_of_open_credit_lines_and_loans",
     "number_of_times90_days_late",
     "number_real_estate_loans_or_lines",
-    "number_of_time60_89_day_past_due_not_worse",
+    "number_of_time60_89_days_past_due_not_worse",
     "number_of_dependents",
     # engineered
     "debt_to_income",
@@ -29,8 +29,8 @@ def engineer(df: pd.DataFrame) -> pd.DataFrame:
 
     df["debt_to_income"] = df["debt_ratio"] * df["monthly_income"]
     df["total_past_due"] = (
-        df["number_of_time30_59_day_past_due_not_worse"]
-        + df["number_of_time60_89_day_past_due_not_worse"]
+        df["number_of_time30_59_days_past_due_not_worse"]
+        + df["number_of_time60_89_days_past_due_not_worse"]
         + df["number_of_times90_days_late"]
     )
     # +1 avoids division by zero for customers with no dependents
