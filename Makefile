@@ -1,10 +1,10 @@
 .PHONY: install train api notebook mlflow clean
 
 install:
-	pip install -r requirements.txt
+	pip3 install -r requirements.txt
 
 train:
-	python pipeline.py
+	python3 pipeline.py
 
 api:
 	uvicorn src.api.main:app --reload --port 8000
